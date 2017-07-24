@@ -1,0 +1,92 @@
+<TextInput>
+    write_tab:False
+    multiline: False
+
+<Car>
+    orientation: 'vertical'
+    GridLayout:
+        cols:1
+        size_hint_y:.5
+        Label:
+            text:'Car Comparison tool. \nThis tool will allow you to compare the horsepower and torque of 2 cars. \nFill out the car information and pick a trim'
+    GridLayout:
+        cols:2
+        rows:1
+        GridLayout:
+            cols:2
+            rows:4
+            Label:
+                text:'Car 1 Make'
+            TextInput:
+                id: car1make
+                #text:'Audi'
+                hint_text:'e.g: Audi'  
+            Label
+                text:'Car 1 Model'
+            TextInput:
+                id: car1model
+                #text:'q5'
+                hint_text:'e.g: Q5'
+            Label:
+                text:'Car 1 Year'
+            TextInput:
+                id: car1year
+                #text:'2012'
+                hint_text:'e.g: 2012'  
+                on_text_validate:root.cartrim1_select(trim1_btn,root.carid_request,car1make,car1model,car1year)
+            Button:
+                id: trim1_btn
+                text:'Show Car1 Trims'
+                on_press: root.cartrim1_select(trim1_btn,root.carid_request,car1make,car1model,car1year)
+            TextInput:
+                size_hint_y:1.5#Size increase to fit hint text
+                id:car1select
+                hint_text:'Pick Selection \nfrom Console'
+        GridLayout:
+            cols:2
+            rows:4
+            Label:
+                text:'Car 2 Make'
+            TextInput:
+                id: car2make
+                #text:'Audi'
+                hint_text:'e.g: BMW'
+            Label:
+                text:'Car 2 Model'
+            TextInput:
+                id: car2model
+                #text:'q3'
+                hint_text:'e.g: X3'
+            Label:
+                text:'Car 2 Year'
+            TextInput:
+                id: car2year
+                #text:'2015'
+                hint_text:'e.g: 2012'
+                on_text_validate:root.cartrim2_select(trim2_btn,root.carid_request,car2make,car2model,car2year)
+            Button:
+                id: trim2_btn
+                text:'Show Car2 Trims'
+                on_press: root.cartrim2_select(trim2_btn,root.carid_request,car2make,car2model,car2year)
+            TextInput:
+                size_hint_y:1.5
+                id: car2select
+                hint_text:'Pick Selection \nfrom Console'
+                on_text_validate:root.compare_cars(compare_btn,root.horsepower_request,root.torque_request,root.add_car)
+                
+    GridLayout:
+        cols:1
+        rows:1
+        size_hint_y:.4
+        Button:
+            id: compare_btn
+            text:"Compare Cars"
+            on_press: root.compare_cars(compare_btn,root.horsepower_request,root.torque_request,root.add_car)
+    GridLayout:
+        cols:1
+        rows:1
+        size_hint_y: 1
+        TextInput:
+            id: console_log
+            hint_text:'Console'
+            multiline: True

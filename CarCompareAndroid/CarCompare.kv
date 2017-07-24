@@ -1,0 +1,73 @@
+<Car>
+    orientation: 'vertical'
+    GridLayout:
+        cols:4
+        rows:1
+        Label:
+            text:'car1make_lbl'
+        TextInput:
+            id: car1make
+            text:'Audi'
+        Label:
+            text:'car2make_lbl'
+        TextInput:
+            id: car2make
+            text:'Audi'
+    GridLayout:
+        cols:4
+        rows:1
+        Label
+            text:'car1model_lbl'
+        TextInput:
+            id: car1model
+            text:'q5'
+        Label:
+            text:'car2model_lbl'
+        TextInput:
+            id: car2model
+            text:'q3'
+    GridLayout:
+        cols:4
+        rows:1
+        Label:
+            text:'car1year_lbl'
+        TextInput:
+            id: car1year
+            text:'2012'
+        Label:
+            text:'car1year_lbl'
+        TextInput:
+            id: car2year
+            text:'2015'
+    GridLayout:
+        cols:4
+        rows:1
+        Button:
+            id: trim1_btn
+            text:'Pick Trim 1'
+            on_press: root.cartrim1_select(trim1_btn,root.carid_request,car1make,car1model,car1year)
+        TextInput:
+            id:car1select
+            hint_text:'Pick Selection from Console'
+        Button:
+            id: trim2_btn
+            text:'Pick Trim 2'
+            on_press: root.cartrim2_select(trim2_btn,root.carid_request,car2make,car2model,car2year)
+        TextInput:
+            id: car2select
+            hint_text:'Pick Selection from Console'
+    GridLayout:
+        cols:1
+        rows:2
+        Button:
+            id: compare_btn
+            text:"Compare Cars"
+            on_press: root.compare_cars(compare_btn,root.horsepower_request,root.torque_request,root.add_car)
+    GridLayout:
+        cols:1
+        rows:1
+        size_hint_y: 2
+        TextInput:
+            id: console_log
+            hint_text:'Console'
+            multiline: True

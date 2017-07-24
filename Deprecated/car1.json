@@ -1,0 +1,33 @@
+{
+    "id": "Audi_Q5",
+    "name": "Q5",
+    "niceName": "q5",
+    "years": [
+        {
+            "id": 100535612,
+            "styles": [
+                {
+                    "id": 101391516,
+                    "name": "3.2 Premium Plus quattro 4dr SUV AWD (3.2L 6cyl 6A)",
+                    "submodel": {
+                        "body": "SUV",
+                        "modelName": "Q5 SUV",
+                        "niceName": "suv"
+                    },
+                    "trim": "3.2 Premium Plus quattro"
+                },
+                {
+                    "id": 101391515,
+                    "name": "2.0T Premium quattro 4dr SUV AWD (2.0L 4cyl Turbo 8A)",
+                    "submodel": {
+                        "body": "SUV",
+                        "modelName": "Q5 SUV",
+                        "niceName": "suv"
+                    },
+                    "trim": "2.0T Premium quattro"
+                }
+            ],
+            "year": 2012
+        }
+    ]
+}
